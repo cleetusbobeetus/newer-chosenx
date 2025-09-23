@@ -1,4 +1,4 @@
-# ChosenX - Modern Marketing Website
+# ChosenX - Static HTML Marketing Website
 
 A professional, modern marketing website built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
 
