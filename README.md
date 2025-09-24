@@ -4,7 +4,7 @@ A professional, modern marketing website built with Next.js 14, TypeScript, Tail
 
 ## 🚀 Features
 
-- **Modern Design**: Clean, minimalist design with deep navy background and gold/teal accents
+- **Modern Design**: Clean, minimalist design with black background and dark red/orange accents
 - **Responsive**: Mobile-first design that works perfectly on all devices
 - **Smooth Animations**: Framer Motion animations for engaging user experience
 - **Professional Layout**: Sticky header with navigation and highlighted CTA button
@@ -30,8 +30,8 @@ A professional, modern marketing website built with Next.js 14, TypeScript, Tail
 ## 🎨 Design System
 
 ### Color Palette
-- **Primary Background**: Deep Navy (#102a43)
-- **Accent Colors**: Gold (#eab308) and Teal (#14b8a6)
+- **Primary Background**: Black (#000000)
+- **Accent Colors**: Dark Red (#b91c1c) and Orange (#ea580c)
 - **Text**: White with opacity variations
 - **Glass Effects**: White overlays with backdrop blur
 
@@ -119,9 +119,9 @@ src/
 Edit the color palette in `tailwind.config.js`:
 ```javascript
 colors: {
-  navy: { /* Custom navy shades */ },
-  gold: { /* Custom gold shades */ },
-  teal: { /* Custom teal shades */ }
+  darkred: { /* Custom dark red shades */ },
+  orange: { /* Custom orange shades */ },
+  stone: { /* Custom stone shades */ }
 }
 ```
 
