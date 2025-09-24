@@ -4,6 +4,10 @@
   "private": true,
   "scripts": {
     "start": "serve .",
-    "dev": "serve ."
+    "dev": "serve .",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
   }
 }

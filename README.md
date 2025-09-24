@@ -1,6 +1,6 @@
 # ChosenX - Static HTML Marketing Website
 
-A professional, modern marketing website built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+A professional, modern marketing website built with static HTML, CSS, and JavaScript.
 
 ## 🚀 Features
 
@@ -19,13 +19,11 @@ A professional, modern marketing website built with Next.js 14, TypeScript, Tail
 
 ## 🛠 Tech Stack
 
-- **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS with custom color palette
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Components**: Custom shadcn/ui inspired components
-- **Utilities**: clsx, tailwind-merge
+- **Frontend**: Static HTML5, CSS3, JavaScript
+- **Development**: Local development server using `serve`
+- **Deployment**: Optimized for static hosting (Vercel, Netlify, GitHub Pages)
+- **Styling**: Custom CSS with modern design principles
+- **Structure**: Multi-page website with clean navigation
 
 ## 🎨 Design System
 
@@ -78,7 +76,7 @@ A professional, modern marketing website built with Next.js 14, TypeScript, Tail
 
 ## 🚀 Getting Started
 
-1. **Install Dependencies**:
+1. **Install Dependencies** (optional for development):
    ```bash
    npm install
    ```
@@ -87,60 +85,55 @@ A professional, modern marketing website built with Next.js 14, TypeScript, Tail
    ```bash
    npm run dev
    ```
+   Or simply open `index.html` in your browser for basic viewing.
 
 3. **Open Browser**:
-   Visit [http://localhost:3000](http://localhost:3000)
+   Visit [http://localhost:3000](http://localhost:3000) (if using npm dev server)
 
 ## 📁 Project Structure
 
 ```
-src/
-├── app/                    # Next.js App Router pages
-│   ├── about/             # About page
-│   ├── apply/             # Application page
-│   ├── contact/           # Contact page
-│   ├── faq/               # FAQ page
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
-├── components/            # Reusable components
-│   ├── ui/                # UI components (Button, Card, Accordion)
-│   ├── Header.tsx         # Site header with navigation
-│   └── Footer.tsx         # Site footer
-├── lib/                   # Utility functions
-│   └── utils.ts           # Helper functions
-└── types/                 # TypeScript type definitions
-    └── index.ts           # Shared interfaces
+CHOSENX/
+├── index.html             # Home page
+├── about.html             # About page  
+├── contact.html           # Contact page
+├── faq.html               # FAQ page
+├── careers.html           # Careers/Apply page
+├── home.html              # Alternative home page
+├── website.html           # Additional page
+├── public/                # Static assets
+│   └── images/            # Image files
+│       ├── hero-bg.jpg    # Hero background
+│       └── team/          # Team photos
+├── package.json           # Project configuration
+├── vercel.json            # Vercel deployment config
+└── README.md              # Project documentation
 ```
 
 ## 🔧 Customization
 
-### Updating Colors
-Edit the color palette in `tailwind.config.js`:
-```javascript
-colors: {
-  darkred: { /* Custom dark red shades */ },
-  orange: { /* Custom orange shades */ },
-  stone: { /* Custom stone shades */ }
-}
-```
+### Updating Content
+- Edit HTML files directly to modify content
+- Update styles in embedded CSS or external stylesheets
+- Modify JavaScript functionality in script tags or external files
+- Replace images in the `public/images/` directory
 
 ### Adding Content
-- Update team members in `src/app/about/page.tsx`
-- Modify FAQ items in `src/app/faq/page.tsx`
-- Change contact information in `src/app/contact/page.tsx`
-- Update company details throughout the site
+- Update team members in `about.html`
+- Modify FAQ items in `faq.html`  
+- Change contact information in `contact.html`
+- Update company details throughout the HTML files
 
 ### Google Maps Integration
 Replace the map placeholder in the Contact page with an actual Google Maps embed:
-```jsx
+```html
 <iframe
   src="https://www.google.com/maps/embed?pb=..."
   width="100%"
   height="300"
   allowFullScreen
-  loading="lazy"
-/>
+  loading="lazy">
+</iframe>
 ```
 
 ## 📦 Build & Deploy
@@ -149,26 +142,30 @@ Replace the map placeholder in the Contact page with an actual Google Maps embed
    ```bash
    npm run build
    ```
+   (This project is already production-ready as static files)
 
-2. **Start Production Server**:
+2. **Start Production Server** (local testing):
    ```bash
    npm start
    ```
 
 3. **Deploy**: 
-   Ready to deploy to Vercel, Netlify, or any hosting platform that supports Next.js.
+   Ready to deploy to Vercel, Netlify, GitHub Pages, or any static hosting platform.
+   
+   **Vercel**: The included `vercel.json` configures proper routing for the static site.
+   **Other platforms**: Simply upload all HTML files and the `public/` directory.
 
 ## 🎯 Performance Features
 
-- **Image Optimization**: Next.js Image component with lazy loading
-- **Code Splitting**: Automatic code splitting with App Router
-- **SEO**: Proper meta tags and Open Graph support
-- **Accessibility**: ARIA labels and semantic HTML
-- **Performance**: Optimized animations and minimal bundle size
+- **Fast Loading**: Static HTML files load instantly
+- **SEO Optimized**: Proper meta tags and semantic HTML structure
+- **Accessibility**: ARIA labels and semantic HTML elements
+- **Mobile Responsive**: Optimized for all device sizes
+- **Clean Code**: Well-structured HTML with efficient CSS
 
 ## 🤝 Contributing
 
-This is a production-ready template that can be customized for any business or organization. The code is clean, well-documented, and follows Next.js best practices.
+This is a production-ready template that can be customized for any business or organization. The code is clean, well-documented, and follows modern web development best practices.
 
 ## 📄 License
 
