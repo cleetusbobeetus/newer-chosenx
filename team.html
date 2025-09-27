@@ -124,20 +124,20 @@
 <body class="bg-black bg-cobblestone text-white">
     
     <!-- Header -->
-    <header class="fixed top-0 z-50 w-full transition-all duration-300 bg-black/95 backdrop-blur-md shadow-lg border-b border-stone-700" id="header">
+    <header class="fixed top-0 z-50 w-full transition-all duration-300" style="background-color: #F5F5F5; border-bottom: 1px solid #e5e7eb;" id="header">
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
              <div class="flex h-20 items-center justify-between">
                  <!-- Logo -->
                  <div class="flex-shrink-0">
                     <a href="home.html" class="flex items-center hover:opacity-80 transition-opacity">
-                        <img src="/images/chosenx-logo.svg" alt="ChosenX" class="h-16 w-auto">
+                        <img src="images/hKMPKNmfRyy-vuSBZ6VgYg-removebg-preview.png" alt="ChosenX" class="h-22 w-auto">
                     </a>
                  </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="home.html" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-darkred-600">Home</a>
+                        <a href="home.html" class="nav-link px-3 py-2 text-sm font-medium text-gray-800 hover:text-darkred-600">Home</a>
                         <div class="relative group">
                             <button class="nav-link px-3 py-2 text-sm font-medium text-darkred-600 flex items-center">
                                 About
@@ -145,15 +145,15 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
-                            <div class="absolute left-0 mt-2 w-48 bg-black/95 backdrop-blur-md rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <div class="py-2">
                                     <a href="about.html" class="block px-4 py-2 text-sm text-white hover:bg-darkred-600/20 hover:text-darkred-600 transition-colors">About Us</a>
                                     <a href="team.html" class="block px-4 py-2 text-sm text-darkred-600 bg-darkred-600/20">Our Team</a>
                                 </div>
                             </div>
                         </div>
-                        <a href="faq.html" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-darkred-600">FAQ</a>
-                        <a href="contact.html" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-darkred-600">Contact</a>
+                        <a href="faq.html" class="nav-link px-3 py-2 text-sm font-medium text-gray-800 hover:text-darkred-600">FAQ</a>
+                        <a href="contact.html" class="nav-link px-3 py-2 text-sm font-medium text-gray-800 hover:text-darkred-600">Contact</a>
                     </div>
                 </div>
 
@@ -166,7 +166,7 @@
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2 text-white hover:text-darkred-600 transition-colors">
+                    <button onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2 text-gray-800 hover:text-darkred-600 transition-colors">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -175,16 +175,16 @@
             </div>
 
             <!-- Mobile Navigation -->
-             <div id="mobile-menu" class="mobile-menu md:hidden fixed top-20 left-0 w-full h-screen bg-black/95 backdrop-blur-md z-40">
+             <div id="mobile-menu" class="mobile-menu md:hidden fixed top-20 left-0 w-full h-screen bg-white z-40">
                 <div class="px-4 pt-2 pb-3 space-y-1">
-                    <a href="home.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-white hover:text-darkred-600 hover:bg-white/5 rounded-xl transition-colors">Home</a>
+                    <a href="home.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-darkred-600 hover:bg-gray-100 rounded-xl transition-colors">Home</a>
                     <div class="space-y-1">
                         <div class="px-3 py-2 text-base font-medium text-darkred-600 bg-darkred-600/10 rounded-xl">About</div>
-                        <a href="about.html" onclick="toggleMobileMenu()" class="block px-6 py-2 text-sm font-medium text-white hover:text-darkred-600 hover:bg-white/5 rounded-xl transition-colors ml-4">About Us</a>
+                        <a href="about.html" onclick="toggleMobileMenu()" class="block px-6 py-2 text-sm font-medium text-gray-800 hover:text-darkred-600 hover:bg-gray-100 rounded-xl transition-colors ml-4">About Us</a>
                         <a href="team.html" onclick="toggleMobileMenu()" class="block px-6 py-2 text-sm font-medium text-darkred-600 bg-darkred-600/20 rounded-xl ml-4">Our Team</a>
                     </div>
-                    <a href="faq.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-white hover:text-darkred-600 hover:bg-white/5 rounded-xl transition-colors">FAQ</a>
-                    <a href="contact.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-white hover:text-darkred-600 hover:bg-white/5 rounded-xl transition-colors">Contact</a>
+                    <a href="faq.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-darkred-600 hover:bg-gray-100 rounded-xl transition-colors">FAQ</a>
+                    <a href="contact.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-darkred-600 hover:bg-gray-100 rounded-xl transition-colors">Contact</a>
                     <div class="pt-2">
                         <a href="careers.html" onclick="toggleMobileMenu()" class="block w-full text-center px-6 py-2 bg-darkred-700 text-white hover:bg-darkred-600 rounded-2xl shadow-lg transition-all">
                             Apply Today!
@@ -505,9 +505,11 @@
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
             if (window.scrollY > 10) {
-                header.classList.add('bg-black/95', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-white/10');
+                header.style.backgroundColor = '#F5F5F5';
+                header.classList.add('backdrop-blur-md', 'shadow-lg', 'border-b', 'border-gray-300');
             } else {
-                header.classList.remove('bg-black/95', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-white/10');
+                header.style.backgroundColor = '#F5F5F5';
+                header.classList.remove('backdrop-blur-md', 'shadow-lg', 'border-b', 'border-gray-300');
             }
         });
 
