@@ -1,0 +1,15 @@
+{
+  "name": "chosenx",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "serve . -p 3000",
+    "dev": "serve . -p 3000",
+    "local": "serve . -p 3000 --single",
+    "deploy": "node deploy.js",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
