@@ -64,11 +64,36 @@
             }
         }
     </script>
-    <style>
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            overflow-x: hidden;
-        }
+     <style>
+         /* Reset default spacing */
+         html, body {
+             margin: 0;
+             padding: 0;
+             border: none !important;
+             outline: none !important;
+         }
+
+         /* Make sure the header sits flush with the hero */
+         header {
+             margin-bottom: 0;
+             padding-bottom: 0;
+         }
+
+         /* Remove unwanted top margin on hero section */
+         .hero-section {
+             margin-top: 0;
+             padding-top: 0; /* adjust if you still need spacing */
+         }
+
+         /* Also reset top margin on hero's first child (often the h1) */
+         .hero-section > *:first-child {
+             margin-top: 0;
+         }
+         
+         body {
+             font-family: 'Inter', system-ui, sans-serif;
+             overflow-x: hidden;
+         }
         
         .gradient-text {
             background: linear-gradient(to right, #b91c1c, #ea580c);
@@ -119,7 +144,7 @@
 <body class="bg-black bg-cobblestone text-white">
     
     <!-- Header -->
-    <header class="fixed top-0 z-50 w-full transition-all duration-300 border-b" style="background-color: #1A1A1A; border-color: #E63946; border-width: 0 0 3px 0; height: 100px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);" id="header">
+    <header class="fixed top-0 z-50 w-full transition-all duration-300" style="background-color: #1A1A1A; height: 100px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);" id="header">
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
              <div class="flex h-full items-center justify-between">
                  <!-- Logo -->
