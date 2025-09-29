@@ -301,9 +301,9 @@ o<!DOCTYPE html>
                 <!-- Slide 3 -->
                 <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-500">
                     <div class="relative w-full h-full" style="background-image: url('images/imagesteam-culture-photo.jpg.PNG'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 100%;">
-                        <div class="absolute inset-0 bg-black/60"></div>
+                        <div class="absolute inset-0 bg-black/70"></div>
                         <div class="absolute inset-0 z-30 flex items-center justify-center h-full">
-                            <div class="text-center px-4 sm:px-6 lg:px-8">
+                            <div class="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
                                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white drop-shadow-2xl">
                                     <span class="gradient-text">Team Culture</span> That Drives Success
                                 </h1>
@@ -414,7 +414,7 @@ o<!DOCTYPE html>
                 <div class="animate-on-scroll">
                     <div class="aspect-square rounded-2xl bg-gradient-to-br from-darkred-700/20 to-orange-500/20 p-1">
                         <div class="w-full h-full rounded-2xl overflow-hidden bg-black flex items-center justify-center">
-                            <img src="/images/chosenxinc_1748549099_3643416373759697007_74953524162.jpg" alt="ChosenX team" loading="lazy" class="w-[98%] h-[98%] object-contain rounded-2xl">
+                            <img src="images/about.jpg" alt="ChosenX team" loading="lazy" class="w-[98%] h-[98%] object-contain rounded-2xl">
                         </div>
                     </div>
                 </div>
@@ -540,6 +540,7 @@ o<!DOCTYPE html>
                 this.nextBtn = document.getElementById('next-btn');
                 this.autoPlayInterval = null;
                 this.isPaused = false;
+                this.isTransitioning = false;
 
                 this.init();
             }
@@ -551,37 +552,68 @@ o<!DOCTYPE html>
             }
 
             bindEvents() {
-                // Navigation buttons
-                this.prevBtn.addEventListener('click', () => this.previousSlide());
-                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                // Navigation buttons with debouncing
+                this.prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (!this.isTransitioning) {
+                        this.previousSlide();
+                    }
+                });
+                
+                this.nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (!this.isTransitioning) {
+                        this.nextSlide();
+                    }
+                });
 
-                // Dot indicators
+                // Dot indicators with debouncing
                 this.dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => this.goToSlide(index));
+                    dot.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (!this.isTransitioning && index !== this.currentSlide) {
+                            this.goToSlide(index);
+                        }
+                    });
                 });
 
                 // Touch/swipe support
                 let startX = 0;
                 let endX = 0;
+                let isSwipeActive = false;
                 const carousel = document.getElementById('hero-carousel');
 
                 carousel.addEventListener('touchstart', (e) => {
-                    startX = e.touches[0].clientX;
+                    if (!this.isTransitioning) {
+                        startX = e.touches[0].clientX;
+                        isSwipeActive = true;
+                    }
                 });
 
                 carousel.addEventListener('touchend', (e) => {
-                    endX = e.changedTouches[0].clientX;
-                    this.handleSwipe(startX, endX);
+                    if (isSwipeActive && !this.isTransitioning) {
+                        endX = e.changedTouches[0].clientX;
+                        this.handleSwipe(startX, endX);
+                        isSwipeActive = false;
+                    }
                 });
 
                 // Mouse events for hover pause
                 carousel.addEventListener('mouseenter', () => this.pauseAutoPlay());
                 carousel.addEventListener('mouseleave', () => this.resumeAutoPlay());
 
-                // Keyboard navigation
+                // Keyboard navigation with debouncing
                 document.addEventListener('keydown', (e) => {
-                    if (e.key === 'ArrowLeft') this.previousSlide();
-                    if (e.key === 'ArrowRight') this.nextSlide();
+                    if (!this.isTransitioning) {
+                        if (e.key === 'ArrowLeft') {
+                            e.preventDefault();
+                            this.previousSlide();
+                        }
+                        if (e.key === 'ArrowRight') {
+                            e.preventDefault();
+                            this.nextSlide();
+                        }
+                    }
                 });
             }
 
@@ -599,18 +631,33 @@ o<!DOCTYPE html>
             }
 
             nextSlide() {
+                if (this.isTransitioning) return;
+                this.isTransitioning = true;
                 this.currentSlide = (this.currentSlide + 1) % this.slides.length;
                 this.updateSlide(this.currentSlide);
+                setTimeout(() => {
+                    this.isTransitioning = false;
+                }, 500);
             }
 
             previousSlide() {
+                if (this.isTransitioning) return;
+                this.isTransitioning = true;
                 this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
                 this.updateSlide(this.currentSlide);
+                setTimeout(() => {
+                    this.isTransitioning = false;
+                }, 500);
             }
 
             goToSlide(index) {
+                if (this.isTransitioning) return;
+                this.isTransitioning = true;
                 this.currentSlide = index;
                 this.updateSlide(this.currentSlide);
+                setTimeout(() => {
+                    this.isTransitioning = false;
+                }, 500);
             }
 
             updateSlide(index) {
@@ -630,7 +677,7 @@ o<!DOCTYPE html>
 
             startAutoPlay() {
                 this.autoPlayInterval = setInterval(() => {
-                    if (!this.isPaused) {
+                    if (!this.isPaused && !this.isTransitioning) {
                         this.nextSlide();
                     }
                 }, 5000); // Change slide every 5 seconds
