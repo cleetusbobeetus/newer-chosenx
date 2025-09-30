@@ -153,19 +153,38 @@ o<!DOCTYPE html>
              transform: translateX(0);
          }
          
-         .team-culture {
-             padding: 80px 20px;
-             text-align: center;
-         }
-         
-         .team-culture img {
-             max-width: 70%;
-             height: auto;
-             object-fit: contain;
-             display: block;
-             margin: 20px auto 0 auto;
-             border-radius: 12px;
-         }
+        .team-culture {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .team-culture img {
+            max-width: 70%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 20px auto 0 auto;
+            border-radius: 12px;
+        }
+        
+        /* Black textured background pattern */
+        .textured-black-bg {
+            background-color: #0c0a09;
+            background-image: 
+                /* Fine grain texture */
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.025) 0%, transparent 40%),
+                radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.02) 0%, transparent 35%),
+                radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.015) 0%, transparent 35%),
+                /* Subtle weave pattern */
+                linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.008) 50%, transparent 60%),
+                linear-gradient(-45deg, transparent 40%, rgba(255, 255, 255, 0.008) 50%, transparent 60%),
+                /* Additional texture layers */
+                radial-gradient(ellipse at 30% 70%, rgba(255, 255, 255, 0.01) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(255, 255, 255, 0.01) 0%, transparent 60%);
+            background-size: 80px 80px, 100px 100px, 60px 60px, 90px 90px, 50px 50px, 50px 50px, 70px 70px, 70px 70px;
+            background-position: 0 0, 25px 25px, 50px 50px, 75px 75px, 0 0, 25px 25px, 35px 35px, 55px 55px;
+        }
      </style>
 </head>
 <body class="bg-black bg-cobblestone text-white">
@@ -305,10 +324,10 @@ o<!DOCTYPE html>
                         <div class="relative z-10 flex items-center justify-center h-full">
                             <div class="text-center px-4 sm:px-6 lg:px-8">
                                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
-                                    Proven <span class="gradient-text">Success</span> for Fortune 500
+                                    Your <span class="gradient-text">Success</span> Depends on You
                                 </h1>
                                 <p class="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-8">
-                                    We help Fortune 500 companies develop their localized retail presence with established track record of success and dynamic team culture.
+                                    We provide the tools, you must master the process. Your success depends on how hard you work and your commitment to excellence.
                                 </p>
                                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                                     <a href="about.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium bg-orange-500 text-black hover:bg-orange-400 rounded-2xl shadow-lg hover:shadow-xl transition-all">
@@ -419,21 +438,23 @@ o<!DOCTYPE html>
     </section>
 
     <!-- Culture Section -->
-    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-        <div class="animate-on-scroll text-center max-w-4xl mx-auto">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-8">
-                Take A Step Into <span class="gradient-text">The Office</span>
-            </h2>
-            <p class="text-lg text-white/80 mb-8 leading-relaxed">
-                …But really it's about our people. We work hard, play hard, and have a dynamic team culture in which we reward high achievers and seek to establish an enjoyable team environment.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="contact.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium bg-orange-500 text-white hover:bg-orange-400 rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                    Talk to an Expert
-                </a>
-                <a href="careers.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium border border-darkred-700 text-darkred-700 hover:bg-darkred-700 hover:text-white rounded-2xl transition-all">
-                    Join Our Team
-                </a>
+    <section class="textured-black-bg">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+            <div class="animate-on-scroll text-center max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-white">
+                    Take A Step Into <span class="gradient-text">The Office</span>
+                </h2>
+                <p class="text-lg text-white mb-8 leading-relaxed">
+                    …But really it's about our people. We work hard, play hard, and have a dynamic team culture in which we reward high achievers and seek to establish an enjoyable team environment.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="contact.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium bg-orange-500 text-white hover:bg-orange-400 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                        Talk to an Expert
+                    </a>
+                    <a href="careers.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium border border-darkred-700 text-darkred-700 hover:bg-darkred-700 hover:text-white rounded-2xl transition-all">
+                        Join Our Team
+                    </a>
+                </div>
             </div>
         </div>
     </section>
