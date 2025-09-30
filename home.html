@@ -75,14 +75,72 @@ o<!DOCTYPE html>
 
          /* Make sure the header sits flush with the hero */
          header {
-             margin-bottom: 0;
-             padding-bottom: 0;
+             margin-bottom: 0 !important;
+             padding-bottom: 0 !important;
          }
 
          /* Remove unwanted top margin on hero section */
          .hero-section {
-             margin-top: 0;
-             padding-top: 0; /* adjust if you still need spacing */
+             margin-top: 0 !important;
+             padding-top: 0 !important;
+         }
+         
+         /* Force hero section to start directly under header */
+         section.relative.overflow-hidden {
+             margin-top: 0 !important;
+             padding-top: 0 !important;
+             margin-bottom: 0 !important;
+             padding-bottom: 0 !important;
+         }
+         
+         /* Force hero section div to have no spacing */
+         section.relative.overflow-hidden > div {
+             margin-top: 0 !important;
+             padding-top: 0 !important;
+             margin-bottom: 0 !important;
+             padding-bottom: 0 !important;
+         }
+         
+         /* Target the specific hero carousel section */
+         section[style*="margin-top: 0"] {
+             margin-top: 0 !important;
+             padding-top: 0 !important;
+             position: relative !important;
+         }
+         
+         /* Force no gap between header and hero */
+         header + section {
+             margin-top: 0 !important;
+             padding-top: 0 !important;
+         }
+         
+         /* Aggressively pull hero section up to eliminate any gap */
+         section.relative.overflow-hidden {
+             margin-top: -10px !important;
+             padding-top: 0 !important;
+         }
+         
+         /* Ensure hero section div covers the gap */
+         section.relative.overflow-hidden > div {
+             margin-top: -20px !important;
+             padding-top: 0 !important;
+             height: 85vh !important;
+             min-height: 500px !important;
+             max-height: 700px !important;
+         }
+         
+         /* Ensure all carousel slides fill full height */
+         .carousel-slide {
+             height: 100% !important;
+             min-height: 100% !important;
+         }
+         
+         .carousel-slide > div {
+             height: 100% !important;
+             min-height: 100% !important;
+             background-size: cover !important;
+             background-position: center !important;
+             background-repeat: no-repeat !important;
          }
 
          /* Also reset top margin on hero's first child (often the h1) */
@@ -263,10 +321,10 @@ o<!DOCTYPE html>
     </header>
 
     <!-- Hero Carousel Section -->
-    <section class="pt-20 relative overflow-hidden">
-        <div class="relative h-[60vh] min-h-[400px] max-h-[600px]">
+    <section class="relative overflow-hidden" style="margin-top: 0 !important; padding-top: 0 !important; margin-bottom: 0 !important; padding-bottom: 0 !important;">
+        <div class="relative h-[85vh] min-h-[500px] max-h-[700px]" style="margin-top: -30px !important; padding-top: 0 !important;">
             <!-- Carousel Container -->
-            <div id="hero-carousel" class="relative w-full h-full">
+            <div id="hero-carousel" class="relative w-full h-full" style="height: 100% !important; min-height: 100% !important;">
                 <!-- Slide 1 -->
                 <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-500">
                     <div class="relative w-full h-full bg-gradient-to-br from-darkred-900/80 to-orange-900/80">

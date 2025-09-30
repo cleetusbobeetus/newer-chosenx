@@ -78,16 +78,42 @@
              padding-bottom: 0;
          }
 
-         /* Remove unwanted top margin on hero section */
-         .hero-section {
-             margin-top: 0;
-             padding-top: 0; /* adjust if you still need spacing */
-         }
+        /* Remove unwanted top margin on hero section */
+        .hero-section {
+            margin-top: 0;
+            padding-top: 0; /* adjust if you still need spacing */
+        }
 
-         /* Also reset top margin on hero's first child (often the h1) */
-         .hero-section > *:first-child {
-             margin-top: 0;
-         }
+        /* Also reset top margin on hero's first child (often the h1) */
+        .hero-section > *:first-child {
+            margin-top: 0;
+        }
+
+        /* Hero section height adjustment */
+        .hero-section {
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Responsive height adjustments */
+        @media (max-width: 640px) {
+            .hero-section {
+                min-height: 350px;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 768px) {
+            .hero-section {
+                min-height: 380px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-section {
+                min-height: 400px;
+            }
+        }
          
          body {
              font-family: 'Inter', system-ui, sans-serif;
@@ -221,9 +247,9 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-            <div class="animate-on-scroll text-center mb-16">
+    <section class="hero-section pt-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+            <div class="animate-on-scroll text-center mb-8">
                 <h1 class="text-4xl sm:text-5xl font-bold mb-6">
                     Meet Our <span class="gradient-text">Team</span>
                 </h1>
@@ -236,7 +262,7 @@
     </section>
 
     <!-- Leadership Section -->
-    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <div class="animate-on-scroll text-center mb-16">
             <h2 class="text-4xl sm:text-5xl font-bold mb-6">
                 Our <span class="gradient-text">FEARLESS LEADERS</span>
