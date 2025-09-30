@@ -164,7 +164,7 @@
             transform: translateY(-8px);
         }
         .mobile-menu {
-            transform: translateX(-100%);
+            transform: translateX(100%);
             transition: transform 0.3s ease;
         }
         .mobile-menu.open {
@@ -190,12 +190,12 @@
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="home.html" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-[#E63946] transition-colors">Home</a>
                         <div class="relative group">
-                            <button class="nav-link px-3 py-2 text-sm font-medium flex items-center text-white hover:text-[#E63946] transition-colors">
+                            <a href="about.html" class="nav-link px-3 py-2 text-sm font-medium flex items-center text-white hover:text-[#E63946] transition-colors">
                                 About
                                 <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
-                            </button>
+                            </a>
                             <div class="absolute left-0 mt-2 w-48 bg-black/95 backdrop-blur-md rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <div class="py-2">
                                     <a href="about.html" class="block px-4 py-2 text-sm text-white hover:bg-[#E63946]/20 hover:text-[#E63946] transition-colors">About Us</a>
@@ -226,7 +226,7 @@
             </div>
 
             <!-- Mobile Navigation -->
-             <div id="mobile-menu" class="mobile-menu md:hidden fixed top-20 left-0 w-full h-screen bg-black/95 backdrop-blur-md z-40">
+             <div id="mobile-menu" class="mobile-menu md:hidden fixed top-25 right-0 w-full h-screen bg-black/95 backdrop-blur-md z-40">
                 <div class="px-4 pt-2 pb-3 space-y-1">
                     <a href="home.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-white hover:text-[#E63946] hover:bg-white/5 rounded-xl transition-colors">Home</a>
                     <div class="space-y-1">
@@ -248,8 +248,8 @@
 
     <!-- Hero Section -->
     <section class="hero-section pt-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-            <div class="animate-on-scroll text-center mb-8">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+            <div class="animate-on-scroll text-center mb-4">
                 <h1 class="text-4xl sm:text-5xl font-bold mb-6">
                     Meet Our <span class="gradient-text">Team</span>
                 </h1>
@@ -262,8 +262,8 @@
     </section>
 
     <!-- Leadership Section -->
-    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        <div class="animate-on-scroll text-center mb-16">
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+        <div class="animate-on-scroll text-center mb-8">
             <h2 class="text-4xl sm:text-5xl font-bold mb-6">
                 Our <span class="gradient-text">FEARLESS LEADERS</span>
             </h2>
