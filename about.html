@@ -146,6 +146,53 @@
         .mobile-menu.open {
             transform: translateX(0);
         }
+        
+        /* Reduced spacing for compact layout */
+        .compact-section {
+            padding: 2rem 0;
+        }
+        
+        .compact-section-lg {
+            padding: 3rem 0;
+        }
+        
+        .compact-heading {
+            margin-bottom: 1rem;
+        }
+        
+        .compact-heading-lg {
+            margin-bottom: 1.5rem;
+        }
+        
+        .compact-text {
+            line-height: 1.4;
+        }
+        
+        .compact-card {
+            padding: 1.5rem;
+        }
+        
+        .compact-card-lg {
+            padding: 2rem;
+        }
+        
+        @media (min-width: 640px) {
+            .compact-section {
+                padding: 2.5rem 0;
+            }
+            .compact-section-lg {
+                padding: 3.5rem 0;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .compact-section {
+                padding: 3rem 0;
+            }
+            .compact-section-lg {
+                padding: 4rem 0;
+            }
+        }
     </style>
 </head>
 <body class="bg-black bg-cobblestone text-white">
@@ -157,7 +204,7 @@
                  <!-- Logo -->
                  <div class="flex-shrink-0 flex items-center h-full">
                     <a href="home.html" class="flex items-center h-full hover:opacity-80 transition-opacity">
-                        <img src="images/create-a-bold-2d-logo-of-a-lion-for-chos_BUjt6dHjRcOBjBtr66UHMg_oEr5r8DfSWWo31zG-LAAsA-removebg-preview.png" alt="ChosenX" style="height: 100%; width: auto; object-fit: contain;">
+                        <img src="images/create-a-bold-2d-logo-of-a-lion-for-chos_BUjt6dHjRcOBjBtr66UHMg_oEr5r8DfSWWo31zG-LAAsA-removebg-preview.png" alt="ChosenX" class="h-12 sm:h-16 md:h-20 w-auto object-contain max-h-full">
                     </a>
                  </div>
 
@@ -224,12 +271,12 @@
 
     <!-- Hero Section -->
     <section class="pt-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-            <div class="animate-on-scroll text-center mb-16">
-                <h1 class="text-4xl sm:text-5xl font-bold mb-6">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 compact-section">
+            <div class="animate-on-scroll text-center mb-8">
+                <h1 class="text-4xl sm:text-5xl font-bold compact-heading">
                     About <span class="gradient-text">ChosenX</span>
                 </h1>
-                <p class="text-lg text-white/80 max-w-3xl mx-auto">
+                <p class="text-lg text-white/80 max-w-3xl mx-auto compact-text">
                     A young sales & marketing firm in Salt Lake City with an established track record 
                     of helping Fortune 500 companies develop their localized retail presence.
                 </p>
@@ -239,19 +286,19 @@
 
     <!-- Mission Section -->
     <section class="glass border-y border-white/10">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 compact-section-lg">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div class="animate-on-scroll">
-                    <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+                    <h2 class="text-3xl sm:text-4xl font-bold compact-heading">
                         Our <span class="gradient-text">Story</span>
                     </h2>
-                    <p class="text-white/80 text-lg mb-6">
+                    <p class="text-white/80 text-lg mb-4 compact-text">
                         ChosenX is a young sales & marketing firm in Salt Lake City. We have had a lot of success helping Fortune 500 firms start and develop their localized retail.
                     </p>
-                    <p class="text-white/80 mb-6">
+                    <p class="text-white/80 mb-4 compact-text">
                         With an established track record of success, our clients want us to expand to every major city in the country. This was our client's most important market to take over next. This city is one of the most rapidly rising and desirable destinations to do business.
                     </p>
-                    <p class="text-white/80">
+                    <p class="text-white/80 compact-text">
                         We work hard, play hard, and have a dynamic team culture in which we reward high achievers and seek to establish an enjoyable team environment.
                     </p>
                 </div>
@@ -267,44 +314,44 @@
     </section>
 
     <!-- Services Section -->
-    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-        <div class="animate-on-scroll text-center mb-16">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 compact-section-lg">
+        <div class="animate-on-scroll text-center mb-8">
+            <h2 class="text-3xl sm:text-4xl font-bold compact-heading">
                 What We <span class="gradient-text">Do</span>
             </h2>
-            <p class="text-lg text-white/80 max-w-2xl mx-auto">
+            <p class="text-lg text-white/80 max-w-2xl mx-auto compact-text">
                 We specialize in three core areas that drive business growth and success.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="animate-on-scroll card-hover glass rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                <div class="p-8 text-center">
-                    <div class="mx-auto mb-6 w-16 h-16 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
+                <div class="compact-card text-center">
+                    <div class="mx-auto mb-4 w-16 h-16 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
                         <span class="text-3xl">🛍️</span>
                     </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">Retail Sales</h3>
-                    <p class="text-white/70 leading-relaxed">We offer a direct Sales and Marketing approach by collaborating with major retailers to deliver the best results for our clients.</p>
+                    <h3 class="text-2xl font-semibold text-white mb-3">Retail Sales</h3>
+                    <p class="text-white/70 compact-text">We offer a direct Sales and Marketing approach by collaborating with major retailers to deliver the best results for our clients.</p>
                 </div>
             </div>
             
             <div class="animate-on-scroll card-hover glass rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                <div class="p-8 text-center">
-                    <div class="mx-auto mb-6 w-16 h-16 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
+                <div class="compact-card text-center">
+                    <div class="mx-auto mb-4 w-16 h-16 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
                         <span class="text-3xl">🏢</span>
                     </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">Brand Building</h3>
-                    <p class="text-white/70 leading-relaxed">Taking advantage of high consumer traffic to promote our clients' products and services.</p>
+                    <h3 class="text-2xl font-semibold text-white mb-3">Brand Building</h3>
+                    <p class="text-white/70 compact-text">Taking advantage of high consumer traffic to promote our clients' products and services.</p>
                 </div>
             </div>
             
             <div class="animate-on-scroll card-hover glass rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                <div class="p-8 text-center">
-                    <div class="mx-auto mb-6 w-16 h-16 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
+                <div class="compact-card text-center">
+                    <div class="mx-auto mb-4 w-16 h-16 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
                         <span class="text-3xl">📈</span>
                     </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">Market Expansion</h3>
-                    <p class="text-white/70 leading-relaxed">In our clients' best interests, we developed a management training program to assure the growth and success of their business.</p>
+                    <h3 class="text-2xl font-semibold text-white mb-3">Market Expansion</h3>
+                    <p class="text-white/70 compact-text">In our clients' best interests, we developed a management training program to assure the growth and success of their business.</p>
                 </div>
             </div>
         </div>
@@ -312,29 +359,29 @@
 
     <!-- Team Section -->
     <section class="bg-gradient-to-r from-darkred-700/10 to-orange-600/10 border-y border-white/10">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-            <div class="animate-on-scroll text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 compact-section-lg">
+            <div class="animate-on-scroll text-center mb-8">
+                <h2 class="text-3xl sm:text-4xl font-bold compact-heading">
                     Meet Our <span class="gradient-text">Leadership</span>
                 </h2>
-                <p class="text-lg text-white/80 max-w-2xl mx-auto">
+                <p class="text-lg text-white/80 max-w-2xl mx-auto compact-text">
                     Powered by our people - our leadership team brings diverse experience and unwavering commitment to excellence.
                 </p>
             </div>
 
             <!-- Coming Soon Section -->
-            <div class="animate-on-scroll mb-16">
+            <div class="animate-on-scroll mb-8">
                 <div class="rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-gradient-to-br from-darkred-700/20 to-orange-600/20 relative">
                     <div class="aspect-video relative flex items-center justify-center">
-                        <div class="text-center p-8">
-                            <div class="mb-6">
-                                <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
+                        <div class="text-center compact-card">
+                            <div class="mb-4">
+                                <div class="w-24 h-24 mx-auto mb-3 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
                                     <span class="text-4xl">👥</span>
                                 </div>
-                                <h3 class="text-3xl font-bold text-white mb-2">Leadership Team</h3>
+                                <h3 class="text-3xl font-bold text-white mb-1">Leadership Team</h3>
                                 <p class="text-xl text-orange-600 font-medium">Coming Soon</p>
                             </div>
-                            <p class="text-white/70 text-lg max-w-md mx-auto">
+                            <p class="text-white/70 text-lg max-w-md mx-auto compact-text">
                                 We're assembling an exceptional leadership team. Stay tuned for updates on our key executives and their vision for ChosenX's future.
                             </p>
                         </div>
@@ -343,18 +390,18 @@
             </div>
 
 
-            <div class="grid grid-cols-1 lg:grid-cols-1 gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-1 gap-8">
                 <!-- Leadership Coming Soon -->
                 <div class="animate-on-scroll card-hover glass rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                    <div class="p-8 text-center">
-                        <div class="flex flex-col items-center text-center mb-6">
-                            <div class="relative w-32 h-32 mx-auto mb-6 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
+                    <div class="compact-card text-center">
+                        <div class="flex flex-col items-center text-center mb-4">
+                            <div class="relative w-32 h-32 mx-auto mb-4 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
                                 <span class="text-5xl">👥</span>
                             </div>
-                            <h3 class="text-2xl font-semibold text-white mb-2">Leadership Team</h3>
-                            <p class="text-orange-600 font-medium text-lg mb-6">Coming Soon</p>
+                            <h3 class="text-2xl font-semibold text-white mb-1">Leadership Team</h3>
+                            <p class="text-orange-600 font-medium text-lg mb-4">Coming Soon</p>
                         </div>
-                        <div class="text-white/70 space-y-4 text-sm leading-relaxed">
+                        <div class="text-white/70 space-y-3 text-sm compact-text">
                             <p>
                                 We're currently assembling our exceptional leadership team. Our executives will bring diverse experience and unwavering commitment to excellence, helping drive ChosenX's continued growth and success.
                             </p>
@@ -367,15 +414,15 @@
 
                 <!-- Branch Manager -->
                 <div class="animate-on-scroll card-hover glass rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                    <div class="p-8">
-                        <div class="flex flex-col items-center text-center mb-6">
-                            <div class="relative w-32 h-32 mx-auto mb-6 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
+                    <div class="compact-card">
+                        <div class="flex flex-col items-center text-center mb-4">
+                            <div class="relative w-32 h-32 mx-auto mb-4 bg-gradient-to-r from-darkred-700 to-orange-600 rounded-2xl flex items-center justify-center">
                                 <span class="text-5xl">👨‍💻</span>
                             </div>
-                            <h3 class="text-2xl font-semibold text-white mb-2">Anthony Turner</h3>
-                            <p class="text-orange-600 font-medium text-lg mb-6">Branch Manager</p>
+                            <h3 class="text-2xl font-semibold text-white mb-1">Anthony Turner</h3>
+                            <p class="text-orange-600 font-medium text-lg mb-4">Branch Manager</p>
                         </div>
-                        <div class="text-white/70 space-y-4 text-sm leading-relaxed">
+                        <div class="text-white/70 space-y-3 text-sm compact-text">
                             <p>
                                 I spent much of my childhood between Louisiana and Brazil, where my mother is from. I went on to study business at Louisiana State University and then served in the Marine Corps for four years.
                             </p>
@@ -393,12 +440,12 @@
     </section>
 
     <!-- Culture Section -->
-    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 compact-section-lg">
         <div class="animate-on-scroll text-center max-w-4xl mx-auto">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-8">
+            <h2 class="text-3xl sm:text-4xl font-bold compact-heading">
                 Our <span class="gradient-text">Culture</span>
             </h2>
-            <p class="text-lg text-white/80 mb-8 leading-relaxed">
+            <p class="text-lg text-white/80 mb-6 compact-text">
                 We work hard, play hard, and have a dynamic team culture in which we reward high achievers and seek to establish an enjoyable team environment. At ChosenX, it's really about our people.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
