@@ -124,9 +124,9 @@ o<!DOCTYPE html>
          section.relative.overflow-hidden > div {
              margin-top: -20px !important;
              padding-top: 0 !important;
-             height: 85vh !important;
-             min-height: 500px !important;
-             max-height: 700px !important;
+             height: 100vh !important;
+             min-height: 600px !important;
+             max-height: 1200px !important;
          }
          
          /* Ensure all carousel slides fill full height */
@@ -243,6 +243,57 @@ o<!DOCTYPE html>
             background-size: 80px 80px, 100px 100px, 60px 60px, 90px 90px, 50px 50px, 50px 50px, 70px 70px, 70px 70px;
             background-position: 0 0, 25px 25px, 50px 50px, 75px 75px, 0 0, 25px 25px, 35px 35px, 55px 55px;
         }
+        
+        /* Responsive video positioning for hero section */
+        .hero-video {
+            object-position: center 20% !important;
+        }
+        
+        /* Mobile adjustments for video positioning */
+        @media (max-width: 768px) {
+            .hero-video {
+                object-position: center 15% !important;
+            }
+        }
+        
+        /* Tablet adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-video {
+                object-position: center 18% !important;
+            }
+        }
+        
+        /* Large desktop adjustments */
+        @media (min-width: 1440px) {
+            .hero-video {
+                object-position: center 22% !important;
+            }
+        }
+        
+        /* Mobile responsive hero height adjustments */
+        @media (max-width: 768px) {
+            section.relative.overflow-hidden > div {
+                height: 100vh !important;
+                min-height: 500px !important;
+                max-height: 800px !important;
+            }
+        }
+        
+        /* Tablet responsive hero height adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            section.relative.overflow-hidden > div {
+                height: 100vh !important;
+                min-height: 600px !important;
+                max-height: 900px !important;
+            }
+        }
+        
+        /* Ensure no horizontal overflow on mobile */
+        @media (max-width: 768px) {
+            .hero-carousel {
+                overflow-x: hidden !important;
+            }
+        }
      </style>
 </head>
 <body class="bg-black bg-cobblestone text-white">
@@ -322,14 +373,14 @@ o<!DOCTYPE html>
 
     <!-- Hero Carousel Section -->
     <section class="relative overflow-hidden" style="margin-top: 0 !important; padding-top: 0 !important; margin-bottom: 0 !important; padding-bottom: 0 !important;">
-        <div class="relative h-[110vh] min-h-[800px] max-h-[1000px]" style="margin-top: -30px !important; padding-top: 0 !important;">
+        <div class="relative h-[130vh] min-h-[900px] max-h-[1200px]" style="margin-top: -30px !important; padding-top: 0 !important;">
             <!-- Carousel Container -->
-            <div id="hero-carousel" class="relative w-full h-full" style="height: 100% !important; min-height: 100% !important;">
+            <div id="hero-carousel" class="hero-carousel relative w-full h-full" style="height: 100% !important; min-height: 100% !important;">
                 <!-- Slide 0 - Animation Video -->
                 <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-500">
                     <div class="relative w-full h-full bg-black flex items-center justify-center" style="padding: 0;">
                         <video 
-                            class="w-full h-full object-cover" 
+                            class="w-full h-full object-cover hero-video" 
                             autoplay 
                             muted 
                             loop 
