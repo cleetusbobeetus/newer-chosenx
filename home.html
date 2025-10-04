@@ -85,63 +85,205 @@
              padding-top: 0 !important;
          }
          
-         /* Force hero section to start directly under header */
-         section.relative.overflow-hidden {
-             margin-top: 0 !important;
-             padding-top: 0 !important;
-             margin-bottom: 0 !important;
-             padding-bottom: 0 !important;
-         }
+        /* Modern hero section styling */
+        .hero-section {
+            height: 100vh !important;
+            min-height: 100vh !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            position: relative !important;
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+        
+        /* Dark gradient overlay for better text readability */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.6) 100%);
+            z-index: 1;
+        }
+        
+        /* Hero content positioning */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1200px;
+            padding: 0 2rem;
+        }
+        
+        /* Premium headline styling */
+        .hero-headline {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero-subheadline {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 3rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Gold highlight for Excellence */
+        .gold-text {
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+        }
+        
+        /* Premium button styling */
+        .premium-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .premium-btn:hover::before {
+            left: 100%;
+        }
+        
+        .premium-btn-orange {
+            background: linear-gradient(135deg, #FF8C00, #FFD700, #FFA500);
+            color: #000;
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
+        }
+        
+        .premium-btn-orange:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 140, 0, 0.6);
+        }
+        
+        .premium-btn-black {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .premium-btn-black:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #2d2d2d, #404040);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Button container */
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .premium-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
          
-         /* Force hero section div to have no spacing */
-         section.relative.overflow-hidden > div {
-             margin-top: 0 !important;
-             padding-top: 0 !important;
-             margin-bottom: 0 !important;
-             padding-bottom: 0 !important;
-         }
-         
-         /* Target the specific hero carousel section */
-         section[style*="margin-top: 0"] {
-             margin-top: 0 !important;
-             padding-top: 0 !important;
-             position: relative !important;
-         }
-         
-         /* Force no gap between header and hero */
-         header + section {
-             margin-top: 0 !important;
-             padding-top: 0 !important;
-         }
-         
-         /* Aggressively pull hero section up to eliminate any gap */
-         section.relative.overflow-hidden {
-             margin-top: -10px !important;
-             padding-top: 0 !important;
-         }
-         
-         /* Ensure hero section div covers the gap */
-         section.relative.overflow-hidden > div {
-             margin-top: -20px !important;
-             padding-top: 0 !important;
-             height: 90vh !important;
-             min-height: 550px !important;
-             max-height: 900px !important;
-         }
-         
-         /* Ensure all carousel slides fill full height */
-         .carousel-slide {
-             height: 100% !important;
-             min-height: 100% !important;
-         }
-         
-         .carousel-slide > div {
-             height: 100% !important;
-             min-height: 100% !important;
-             background-size: cover !important;
-             background-position: center !important;
-             background-repeat: no-repeat !important;
-         }
+        /* Premium navbar styling */
+        .premium-navbar {
+            background: rgba(0, 0, 0, 0.85) !important;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .premium-logo {
+            height: 3.5rem !important;
+            transition: all 0.3s ease;
+        }
+        
+        .premium-apply-btn {
+            background: linear-gradient(135deg, #FF8C00, #FFD700);
+            color: #000;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-apply-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .premium-apply-btn:hover::before {
+            left: 100%;
+        }
+        
+        .premium-apply-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+        }
+        
+        /* Ensure all carousel slides fill full height */
+        .carousel-slide {
+            height: 100% !important;
+            min-height: 100% !important;
+        }
+        
+        .carousel-slide > div {
+            height: 100% !important;
+            min-height: 100% !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
 
          /* Also reset top margin on hero's first child (often the h1) */
          .hero-section > *:first-child {
@@ -171,15 +313,10 @@
              backdrop-filter: blur(10px);
              border: 1px solid rgba(255, 255, 255, 0.1);
          }
-         .animate-on-scroll {
-             opacity: 0;
-             transform: translateY(20px);
-             transition: all 0.6s ease-out;
-         }
-         .animate-on-scroll.visible {
-             opacity: 1;
-             transform: translateY(0);
-         }
+        .animate-on-scroll {
+            opacity: 1;
+            transform: translateY(0);
+        }
          .nav-link {
              position: relative;
              transition: color 0.3s ease;
@@ -251,8 +388,12 @@
         
         /* Mobile adjustments for video positioning - only affects mobile */
         @media (max-width: 640px) {
-            .hero-video {
-                object-position: center 25% !important;
+            .carousel-slide:first-child video.hero-video {
+                object-position: center top !important;
+                transform: none !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
             }
         }
         
@@ -277,6 +418,26 @@
                 min-height: 450px !important;
                 max-height: 700px !important;
             }
+            
+            /* Adjust animated logo position for mobile - first slide only */
+            .carousel-slide:first-child video.hero-video {
+                object-position: center top !important;
+                transform: none !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+            }
+        }
+        
+        /* Additional mobile range for screens between 641px and 768px */
+        @media (min-width: 641px) and (max-width: 768px) {
+            .carousel-slide:first-child video.hero-video {
+                object-position: center top !important;
+                transform: none !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+            }
         }
         
         /* Tablet responsive hero height adjustments */
@@ -300,22 +461,22 @@
     
     
     <!-- Header -->
-    <header class="fixed top-0 z-50 w-full transition-all duration-300" style="background-color: #1A1A1A; height: 100px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);" id="header">
+    <header class="fixed top-0 z-50 w-full transition-all duration-300 premium-navbar" style="height: 100px;" id="header">
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
              <div class="flex h-full items-center justify-between">
                  <!-- Logo -->
                  <div class="flex-shrink-0 flex items-center h-full">
                     <a href="home.html" class="flex items-center h-full hover:opacity-80 transition-opacity">
-                        <img src="images/create-a-bold-2d-logo-of-a-lion-for-chos_BUjt6dHjRcOBjBtr66UHMg_oEr5r8DfSWWo31zG-LAAsA-removebg-preview.png" alt="ChosenX" class="h-12 sm:h-16 md:h-20 w-auto object-contain max-h-full">
+                        <img src="images/new logo for header.png" alt="ChosenX" class="premium-logo w-auto object-contain max-h-full">
                     </a>
                  </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="home.html" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-[#E63946] transition-colors">Home</a>
+                        <a href="home.html" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-[#FFD700] transition-colors">Home</a>
                         <div class="relative group">
-                            <a href="about.html" class="nav-link px-3 py-2 text-sm font-medium flex items-center text-white hover:text-[#E63946] transition-colors">
+                            <a href="about.html" class="nav-link px-3 py-2 text-sm font-medium flex items-center text-white hover:text-[#FFD700] transition-colors">
                                 About
                                 <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -323,26 +484,26 @@
                             </a>
                             <div class="absolute left-0 mt-2 w-48 bg-black/95 backdrop-blur-md rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <div class="py-2">
-                                    <a href="about.html" class="block px-4 py-2 text-sm text-white hover:bg-[#E63946]/20 hover:text-[#E63946] transition-colors">About Us</a>
-                                    <a href="team.html" class="block px-4 py-2 text-sm text-white hover:bg-[#E63946]/20 hover:text-[#E63946] transition-colors">Our Team</a>
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-white hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-colors">About Us</a>
+                                    <a href="team.html" class="block px-4 py-2 text-sm text-white hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-colors">Our Team</a>
                                 </div>
                             </div>
                         </div>
-                        <a href="faq.html" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-[#E63946] transition-colors">FAQ</a>
-                        <a href="contact.html" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-[#E63946] transition-colors">Contact</a>
+                        <a href="faq.html" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-[#FFD700] transition-colors">FAQ</a>
+                        <a href="contact.html" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-[#FFD700] transition-colors">Contact</a>
                     </div>
                 </div>
 
                 <!-- CTA Button -->
                 <div class="hidden md:block">
-                    <a href="careers.html" class="inline-flex items-center justify-center px-6 py-2 text-sm font-medium bg-[#E63946] text-white hover:bg-[#E63946]/90 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                    <a href="careers.html" class="premium-apply-btn">
                         Apply Today!
                     </a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2 text-white hover:text-[#E63946] transition-colors">
+                    <button onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2 text-white hover:text-[#FFD700] transition-colors">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -353,16 +514,16 @@
             <!-- Mobile Navigation -->
              <div id="mobile-menu" class="mobile-menu md:hidden fixed top-25 right-0 w-full h-screen bg-black/95 backdrop-blur-md z-40">
                 <div class="px-4 pt-2 pb-3 space-y-1">
-                    <a href="home.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-[#E63946] bg-[#E63946]/10 rounded-xl">Home</a>
+                    <a href="home.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-[#FFD700] bg-[#FFD700]/10 rounded-xl">Home</a>
                     <div class="space-y-1">
                         <div class="px-3 py-2 text-base font-medium text-white/70">About</div>
-                        <a href="about.html" onclick="toggleMobileMenu()" class="block px-6 py-2 text-sm font-medium text-white hover:text-[#E63946] hover:bg-white/5 rounded-xl transition-colors ml-4">About Us</a>
-                        <a href="team.html" onclick="toggleMobileMenu()" class="block px-6 py-2 text-sm font-medium text-white hover:text-[#E63946] hover:bg-white/5 rounded-xl transition-colors ml-4">Our Team</a>
+                        <a href="about.html" onclick="toggleMobileMenu()" class="block px-6 py-2 text-sm font-medium text-white hover:text-[#FFD700] hover:bg-white/5 rounded-xl transition-colors ml-4">About Us</a>
+                        <a href="team.html" onclick="toggleMobileMenu()" class="block px-6 py-2 text-sm font-medium text-white hover:text-[#FFD700] hover:bg-white/5 rounded-xl transition-colors ml-4">Our Team</a>
                     </div>
-                    <a href="faq.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-white hover:text-[#E63946] hover:bg-white/5 rounded-xl transition-colors">FAQ</a>
-                    <a href="contact.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-white hover:text-[#E63946] hover:bg-white/5 rounded-xl transition-colors">Contact</a>
+                    <a href="faq.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700] hover:bg-white/5 rounded-xl transition-colors">FAQ</a>
+                    <a href="contact.html" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700] hover:bg-white/5 rounded-xl transition-colors">Contact</a>
                     <div class="pt-2">
-                        <a href="careers.html" onclick="toggleMobileMenu()" class="block w-full text-center px-6 py-2 bg-[#E63946] text-white hover:bg-[#E63946]/90 rounded-2xl shadow-lg transition-all">
+                        <a href="careers.html" onclick="toggleMobileMenu()" class="block w-full text-center px-6 py-2 premium-apply-btn">
                             Apply Today!
                         </a>
                     </div>
@@ -400,17 +561,17 @@
                         <div class="absolute inset-0 bg-black/30"></div>
                         <div class="relative z-10 flex items-center justify-center h-full">
                             <div class="text-center px-4 sm:px-6 lg:px-8">
-                                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                                <h1 class="hero-headline text-white">
                                     Award Winning <span class="gradient-text">Sales & Marketing</span>
                                 </h1>
-                                <p class="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-8">
+                                <p class="hero-subheadline text-white">
                                     Helping Fortune 500 companies develop their localized retail presence with proven results.
                                 </p>
-                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <a href="careers.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium bg-darkred-700 text-white hover:bg-darkred-600 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                                <div class="hero-buttons">
+                                    <a href="careers.html" class="premium-btn premium-btn-orange">
                                         Apply Today!
                                     </a>
-                                    <a href="about.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-2xl transition-all">
+                                    <a href="about.html" class="premium-btn premium-btn-black">
                                         Learn More
                                     </a>
                                 </div>
@@ -422,20 +583,20 @@
                 <!-- Slide 2 -->
                 <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-500">
                     <div class="relative w-full h-full" style="background-image: url('images/chosenxinc_1748549099_3643416373759697007_74953524162.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 100%;">
-                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="hero-overlay"></div>
                         <div class="relative z-10 flex items-center justify-center h-full">
                             <div class="text-center px-4 sm:px-6 lg:px-8">
-                                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
-                                    <span class="gradient-text">Retail Sales</span> Excellence
+                                <h1 class="hero-headline text-white">
+                                    <span class="gradient-text">Retail Sales</span> <span class="gold-text">Excellence</span>
                                 </h1>
-                                <p class="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-8">
+                                <p class="hero-subheadline text-white">
                                     Direct sales and marketing approach collaborating with major retailers for maximum impact.
                                 </p>
-                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <a href="about.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium bg-orange-500 text-black hover:bg-orange-400 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                                <div class="hero-buttons">
+                                    <a href="about.html" class="premium-btn premium-btn-orange">
                                         Learn More
                                     </a>
-                                    <a href="faq.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium border border-white text-white hover:bg-white hover:text-black rounded-2xl transition-all">
+                                    <a href="faq.html" class="premium-btn premium-btn-black">
                                         FAQ
                                     </a>
                                 </div>
@@ -450,17 +611,17 @@
                         <div class="absolute inset-0 bg-black/60"></div>
                         <div class="relative z-10 flex items-center justify-center h-full">
                             <div class="text-center px-4 sm:px-6 lg:px-8">
-                                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                                <h1 class="hero-headline text-white">
                                     Your <span class="gradient-text">Success</span> Depends on You
                                 </h1>
-                                <p class="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-8">
+                                <p class="hero-subheadline text-white">
                                     We provide the tools, you must master the process. Your success depends on how hard you work and your commitment to excellence.
                                 </p>
-                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <a href="about.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium bg-orange-500 text-black hover:bg-orange-400 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                                <div class="hero-buttons">
+                                    <a href="about.html" class="premium-btn premium-btn-orange">
                                         About
                                     </a>
-                                    <a href="contact.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium border border-white text-white hover:bg-white hover:text-black rounded-2xl transition-all">
+                                    <a href="contact.html" class="premium-btn premium-btn-black">
                                         Contact Us
                                     </a>
                                 </div>
@@ -842,23 +1003,7 @@
             new HeroCarousel();
         });
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
+        // Scroll animations removed - all elements are now immediately visible
 
         // Header scroll effect
         window.addEventListener('scroll', function() {
